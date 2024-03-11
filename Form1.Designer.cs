@@ -29,44 +29,65 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView_University = new System.Windows.Forms.DataGridView();
+            this.tableSelect = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_University)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_University
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 350);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_University.AllowUserToAddRows = false;
+            this.dataGridView_University.AllowUserToDeleteRows = false;
+            this.dataGridView_University.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_University.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView_University.Name = "dataGridView_University";
+            this.dataGridView_University.ReadOnly = true;
+            this.dataGridView_University.Size = new System.Drawing.Size(1021, 350);
+            this.dataGridView_University.TabIndex = 0;
+            // 
+            // tableSelect
+            // 
+            this.tableSelect.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tableSelect.FormattingEnabled = true;
+            this.tableSelect.ItemHeight = 25;
+            this.tableSelect.Items.AddRange(new object[] {
+            "University",
+            "Faculty",
+            "Department",
+            "SPW",
+            "Rating",
+            "WorkIndicator"});
+            this.tableSelect.Location = new System.Drawing.Point(13, 25);
+            this.tableSelect.Name = "tableSelect";
+            this.tableSelect.Size = new System.Drawing.Size(306, 33);
+            this.tableSelect.TabIndex = 1;
+            this.tableSelect.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 583);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.tableSelect);
+            this.Controls.Add(this.dataGridView_University);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1061, 622);
+            this.MaximumSize = new System.Drawing.Size(1600, 900);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1061, 622);
+            this.MinimumSize = new System.Drawing.Size(1600, 900);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Реєстр НПП";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_University)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_University;
+        private System.Windows.Forms.ComboBox tableSelect;
     }
 }
 

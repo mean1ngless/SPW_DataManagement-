@@ -29,23 +29,34 @@ namespace course_work
             InitializeComponent();
         }
 
-        private void CreateColumns()
+        private void CreateColumns_University()
         {
-            dataGridView1.Columns.Add("Id", "Id");
-            dataGridView1.Columns.Add("UniversityName", "Назва універитету");
-            dataGridView1.Columns.Add("UniversityAddress", "Адреса");
-            dataGridView1.Columns.Add("IsNew", String.Empty);
+            dataGridView_University.Columns.Add("Id", "Id");
+            dataGridView_University.Columns.Add("UniversityName", "Назва універитету");
+            dataGridView_University.Columns.Add("UniversityAddress", "Адреса");
+            dataGridView_University.Columns.Add("IsNew", String.Empty);
+        }
+        private void CreateColumns_Faculty()
+        {
+            dataGridView_University.Columns.Add("Id", "Id");
+            dataGridView_University.Columns.Add("FacultyName", "Назва факультету");
+            dataGridView_University.Columns.Add("UniversityId", "ID університету");
+            dataGridView_University.Columns.Add("IsNew", String.Empty);
         }
 
-        private void readSingleRow(DataGridView dgw, IDataRecord record)
+        private void readSingleRow_University(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), RowState.ModifiedNew);
         }
+        private void readSingleRow_Faculty(DataGridView dgw, IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), RowState.ModifiedNew);
+        }
 
-        private void RefreshDataGrid(DataGridView dgw)
+        private void RefreshDataGrid(DataGridView dgw, string tableSelected)
         {
             dgw.Rows.Clear();
-            string queryString = $"select * from University";
+            string queryString = $"select * from {tableSelected}";
             SqlCommand command= new SqlCommand(queryString, dataBase.getConnection());
             dataBase.openConnection();
 
@@ -53,16 +64,36 @@ namespace course_work
 
             while (reader.Read())
             {
-                readSingleRow(dgw, reader);
+                if(tableSelect.Text == "University")
+                {
+                    readSingleRow_University(dgw, reader);
+                }
+                if (tableSelect.Text == "Faculty")
+                {
+                    readSingleRow_Faculty(dgw, reader);
+                }
             }
             reader.Close();
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
+        {          
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CreateColumns();
-            RefreshDataGrid(dataGridView1);
+            dataGridView_University.Columns.Clear();
+            if (tableSelect.SelectedIndex == 0)
+            {
+                CreateColumns_University();
+            }
+            if (tableSelect.SelectedIndex == 1)
+            {
+                CreateColumns_Faculty();
+            }
+            string table = tableSelect.Text;
+            RefreshDataGrid(dataGridView_University, table);
         }
     }
 }
