@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridView_University = new System.Windows.Forms.DataGridView();
+            this.dataGridView_top = new System.Windows.Forms.DataGridView();
             this.tableSelect = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_University)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_top)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView_University
+            // dataGridView_top
             // 
-            this.dataGridView_University.AllowUserToAddRows = false;
-            this.dataGridView_University.AllowUserToDeleteRows = false;
-            this.dataGridView_University.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_University.Location = new System.Drawing.Point(12, 63);
-            this.dataGridView_University.Name = "dataGridView_University";
-            this.dataGridView_University.ReadOnly = true;
-            this.dataGridView_University.Size = new System.Drawing.Size(1021, 350);
-            this.dataGridView_University.TabIndex = 0;
+            this.dataGridView_top.AllowUserToAddRows = false;
+            this.dataGridView_top.AllowUserToDeleteRows = false;
+            this.dataGridView_top.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_top.Location = new System.Drawing.Point(12, 63);
+            this.dataGridView_top.Name = "dataGridView_top";
+            this.dataGridView_top.ReadOnly = true;
+            this.dataGridView_top.Size = new System.Drawing.Size(655, 242);
+            this.dataGridView_top.TabIndex = 0;
             // 
             // tableSelect
             // 
@@ -67,9 +67,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1584, 861);
             this.Controls.Add(this.tableSelect);
-            this.Controls.Add(this.dataGridView_University);
+            this.Controls.Add(this.dataGridView_top);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1600, 900);
@@ -79,14 +81,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Реєстр НПП";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_University)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_top)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView_University;
+        private System.Windows.Forms.DataGridView dataGridView_top;
         private System.Windows.Forms.ComboBox tableSelect;
     }
 }
