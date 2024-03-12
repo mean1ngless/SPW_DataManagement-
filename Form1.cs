@@ -35,6 +35,10 @@ namespace course_work
             dataGridView_top.Columns.Add("UniversityName", "Назва універитету");
             dataGridView_top.Columns.Add("UniversityAddress", "Адреса");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
+            dataGridView_top.Columns[0].Width = 27;
+            dataGridView_top.Columns[1].Width = 310;
+            dataGridView_top.Columns[2].Width = 200;
+            dataGridView_top.Columns[3].Width = 75;
         }
         private void CreateColumns_Faculty()
         {
@@ -42,6 +46,10 @@ namespace course_work
             dataGridView_top.Columns.Add("FacultyName", "Назва факультету");
             dataGridView_top.Columns.Add("UniversityId", "ID університету");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
+            dataGridView_top.Columns[0].Width = 27;
+            dataGridView_top.Columns[1].Width = 413;
+            dataGridView_top.Columns[2].Width = 80;
+            dataGridView_top.Columns[3].Width = 75;
         }
         private void CreateColumns_Department()
         {
@@ -49,6 +57,10 @@ namespace course_work
             dataGridView_top.Columns.Add("DepartmentName", "Назва кафедри");
             dataGridView_top.Columns.Add("FacultyId", "ID факультету");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
+            dataGridView_top.Columns[0].Width = 37;
+            dataGridView_top.Columns[1].Width = 413;
+            dataGridView_top.Columns[2].Width = 70;
+            dataGridView_top.Columns[3].Width = 75;
         }
         private void CreateColumns_SPW()
         {
@@ -57,18 +69,28 @@ namespace course_work
             dataGridView_top.Columns.Add("JobTitle", "Посада");
             dataGridView_top.Columns.Add("DepartmentId", "ID кафедри");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
+            dataGridView_top.Columns[0].Width = 27;
+            dataGridView_top.Columns[1].Width = 213;
+            dataGridView_top.Columns[2].Width = 200;
+            dataGridView_top.Columns[3].Width = 80;
+            dataGridView_top.Columns[4].Width = 75;
         }
         private void CreateColumns_Rating()
         {
             dataGridView_top.Columns.Add("Id", "Id");
             dataGridView_top.Columns.Add("SPW_Id", "ID НПП");
             dataGridView_top.Columns.Add("RatingYear", "Дата рейтингу");
-            dataGridView_top.Columns.Add("WorkIndicator_Id", "ID показника роботи");
+            dataGridView_top.Columns.Add("WorkIndicator_Id", "ID пкз. роботи");
             dataGridView_top.Columns.Add("Quantity", "Кількість");
             dataGridView_top.Columns.Add("AchievementsDescription", "Опис наукових досягнень");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
             dataGridView_top.Columns[0].Width = 30;
             dataGridView_top.Columns[1].Width = 45;
+            dataGridView_top.Columns[2].Width = 115;
+            dataGridView_top.Columns[3].Width = 45;
+            dataGridView_top.Columns[4].Width = 60;
+            dataGridView_top.Columns[5].Width = 225;
+            dataGridView_top.Columns[6].Width = 75;
         }
         private void CreateColumns_WorkIndicator()
         {
@@ -76,6 +98,10 @@ namespace course_work
             dataGridView_top.Columns.Add("WorkName", "Вид роботи");
             dataGridView_top.Columns.Add("Score", "Кількість балів");
             dataGridView_top.Columns.Add("IsNew", String.Empty);
+            dataGridView_top.Columns[0].Width = 37;
+            dataGridView_top.Columns[1].Width = 413;
+            dataGridView_top.Columns[2].Width = 70;
+            dataGridView_top.Columns[3].Width = 75;
         }
         private void readSingleRow_University(DataGridView dgw, IDataRecord record)
         {
@@ -104,7 +130,6 @@ namespace course_work
 
             dgw.Rows.Add(id, spwId, ratingYear, workIndicatorId, quantity, achievementsDescription, RowState.ModifiedNew);
         }
-
         private void readSingleRow_WorkIndicator(DataGridView dgw, IDataRecord record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetDouble(2), RowState.ModifiedNew);
@@ -182,6 +207,6 @@ namespace course_work
             }
             string table = tableSelect.Text;
             RefreshDataGrid(dataGridView_top, table);
-        }
+        }        
     }
 }
