@@ -32,6 +32,7 @@
             this.dataGridView_top = new System.Windows.Forms.DataGridView();
             this.tableSelect = new System.Windows.Forms.ComboBox();
             this.label_TableName_top = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_top)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +81,20 @@
             this.label_TableName_top.Text = "Оберіть довідник:";
             this.label_TableName_top.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Cascadia Mono", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(12, 340);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 62);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Credits";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +102,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(984, 461);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_TableName_top);
             this.Controls.Add(this.tableSelect);
             this.Controls.Add(this.dataGridView_top);
@@ -110,6 +126,7 @@
         private System.Windows.Forms.DataGridView dataGridView_top;
         private System.Windows.Forms.ComboBox tableSelect;
         private System.Windows.Forms.Label label_TableName_top;
+        private System.Windows.Forms.Button button1;
     }
 }
 

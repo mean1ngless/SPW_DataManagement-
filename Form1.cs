@@ -207,6 +207,12 @@ namespace course_work
             }
             string table = tableSelect.Text;
             RefreshDataGrid(dataGridView_top, table);
-        }        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form about_me = new about_meForm();
+            about_me.ShowDialog();
+        }
     }
 }

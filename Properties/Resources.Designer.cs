@@ -59,5 +59,15 @@ namespace course_work.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap a63f429cf72d0583d8857d7b820c71ea {
+            get {
+                object obj = ResourceManager.GetObject("a63f429cf72d0583d8857d7b820c71ea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
