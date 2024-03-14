@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="add_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_form.Designer.cs">
+      <DependentUpon>add_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="about_meForm.resx">
       <DependentUpon>about_meForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_form.resx">
+      <DependentUpon>add_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -90,9 +99,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\1485477118-rotation-right_78579 %281%29.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\a63f429cf72d0583d8857d7b820c71ea.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1485477118-rotation-right_78579 %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

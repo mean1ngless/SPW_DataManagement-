@@ -63,6 +63,26 @@ namespace course_work.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1485477118_rotation_right_78579__1_ {
+            get {
+                object obj = ResourceManager.GetObject("1485477118-rotation-right_78579 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1485477118_rotation_right_78579__2_ {
+            get {
+                object obj = ResourceManager.GetObject("1485477118-rotation-right_78579 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap a63f429cf72d0583d8857d7b820c71ea {
             get {
                 object obj = ResourceManager.GetObject("a63f429cf72d0583d8857d7b820c71ea", resourceCulture);

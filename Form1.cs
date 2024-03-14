@@ -214,5 +214,17 @@ namespace course_work
             Form about_me = new about_meForm();
             about_me.ShowDialog();
         }
+
+        private void button_addnew_Click(object sender, EventArgs e)
+        {
+            Form add_new = new add_form();
+            add_new.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string table = tableSelect.Text;
+            RefreshDataGrid(dataGridView_top, table);
+        }
     }
 }
