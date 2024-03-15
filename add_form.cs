@@ -155,18 +155,25 @@ namespace course_work
         {
             if (radio_University.Checked)
             {
-                database.openConnection();
-                var universityName = textBox_universityName.Text;
-                var universityAddress = textBox_universityAddress.Text;
+                try
+                {
+                    database.openConnection();
+                    var universityName = textBox_universityName.Text;
+                    var universityAddress = textBox_universityAddress.Text;
 
-                var addQuery = "INSERT INTO University (UniversityName, UniversityAddress) VALUES (@UniversityName, @UniversityAddress)";
+                    var addQuery = "INSERT INTO University (UniversityName, UniversityAddress) VALUES (@UniversityName, @UniversityAddress)";
 
-                var command = new SqlCommand(addQuery, database.getConnection());
-                command.Parameters.AddWithValue("@UniversityName", universityName);
-                command.Parameters.AddWithValue("@UniversityAddress", universityAddress);
-                command.ExecuteNonQuery();
-                MessageBox.Show("Запис успішно створено.","Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                database.closeConnection();
+                    var command = new SqlCommand(addQuery, database.getConnection());
+                    command.Parameters.AddWithValue("@UniversityName", universityName);
+                    command.Parameters.AddWithValue("@UniversityAddress", universityAddress);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Запис успішно створено.", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    database.closeConnection();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Помилка SQL: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if (radio_Faculty.Checked)
             {
@@ -199,106 +206,135 @@ namespace course_work
             }
             if(radio_Department.Checked)
             {
-                database.openConnection();
-                var department_name = textBox_departName.Text;
-                int depart_faculty_id;
-                if (int.TryParse(textBox_departFacultyId.Text, out depart_faculty_id))
+                try
                 {
-                    var addQuery = "INSERT INTO Department (DepartmentName, FacultyId) VALUES (@DepartmentName, @FacultyId)";
+                    database.openConnection();
+                    var department_name = textBox_departName.Text;
+                    int depart_faculty_id;
+                    if (int.TryParse(textBox_departFacultyId.Text, out depart_faculty_id))
+                    {
+                        var addQuery = "INSERT INTO Department (DepartmentName, FacultyId) VALUES (@DepartmentName, @FacultyId)";
 
-                    var command = new SqlCommand(addQuery, database.getConnection());
-                    command.Parameters.AddWithValue("@DepartmentName", department_name);
-                    command.Parameters.AddWithValue("@FacultyId", depart_faculty_id);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var command = new SqlCommand(addQuery, database.getConnection());
+                        command.Parameters.AddWithValue("@DepartmentName", department_name);
+                        command.Parameters.AddWithValue("@FacultyId", depart_faculty_id);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    database.closeConnection();
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Помилка SQL: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                database.closeConnection();
             }
             if(radio_SPW.Checked)
             {
-                database.openConnection();
-                var Fullname = textBox_SPWName.Text;
-                var JobTitle = textBox_SPWJob.Text;
-                int DepartmentId;
-                if(int.TryParse(textBox_spwdepartid.Text, out DepartmentId))
+                try
                 {
-                    var addQuery = "INSERT INTO SPW (FullName, JobTitle, DepartmentId) VALUES (@FullName, @JobTitle, @DepartmentId)";
+                    database.openConnection();
+                    var Fullname = textBox_SPWName.Text;
+                    var JobTitle = textBox_SPWJob.Text;
+                    int DepartmentId;
+                    if (int.TryParse(textBox_spwdepartid.Text, out DepartmentId))
+                    {
+                        var addQuery = "INSERT INTO SPW (FullName, JobTitle, DepartmentId) VALUES (@FullName, @JobTitle, @DepartmentId)";
 
-                    var command = new SqlCommand(addQuery, database.getConnection());
-                    command.Parameters.AddWithValue("@FullName", Fullname);
-                    command.Parameters.AddWithValue("@JobTitle", JobTitle);
-                    command.Parameters.AddWithValue("@DepartmentId", DepartmentId);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var command = new SqlCommand(addQuery, database.getConnection());
+                        command.Parameters.AddWithValue("@FullName", Fullname);
+                        command.Parameters.AddWithValue("@JobTitle", JobTitle);
+                        command.Parameters.AddWithValue("@DepartmentId", DepartmentId);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    database.closeConnection();
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Помилка SQL: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                database.closeConnection();
             }
             if (radio_Rating.Checked)
             {
-                database.openConnection();
-                int SPW_Id;
-                string Rating = textBox_ratingyear.Text;
-                DateTime RatingDate;
-                int workIndicatorId;
-                double Quantity;
-                string Description = textBox_ratingdescr.Text;
+                try
+                {
+                    database.openConnection();
+                    int SPW_Id;
+                    string Rating = textBox_ratingyear.Text;
+                    DateTime RatingDate;
+                    int workIndicatorId;
+                    double Quantity;
+                    string Description = textBox_ratingdescr.Text;
 
-                if(int.TryParse(textBox_ratingspwid.Text, out SPW_Id)){
-                    if(DateTime.TryParse(Rating, out RatingDate))
+                    if (int.TryParse(textBox_ratingspwid.Text, out SPW_Id))
                     {
-                        if(int.TryParse(textBox_ratingworkid.Text, out workIndicatorId))
+                        if (DateTime.TryParse(Rating, out RatingDate))
                         {
-                            if(double.TryParse(textBox_ratingquantity.Text, out Quantity))
+                            if (int.TryParse(textBox_ratingworkid.Text, out workIndicatorId))
                             {
-                                var addQuery = "INSERT INTO Rating (SPW_Id, RatingYear, WorkIndicator_Id, Quantity, AchievementsDescription) VALUES(@SPW_Id, @RatingYear, @WorkIndicator_Id, @Quantity, @AchievementsDescription)";
-                                var command = new SqlCommand(addQuery, database.getConnection());
+                                if (double.TryParse(textBox_ratingquantity.Text, out Quantity))
+                                {
+                                    var addQuery = "INSERT INTO Rating (SPW_Id, RatingYear, WorkIndicator_Id, Quantity, AchievementsDescription) VALUES(@SPW_Id, @RatingYear, @WorkIndicator_Id, @Quantity, @AchievementsDescription)";
+                                    var command = new SqlCommand(addQuery, database.getConnection());
 
-                                command.Parameters.AddWithValue("@SPW_Id", SPW_Id);
-                                command.Parameters.AddWithValue("@RatingYear", RatingDate);
-                                command.Parameters.AddWithValue("@WorkIndicator_Id", workIndicatorId);
-                                command.Parameters.AddWithValue("@Quantity", Quantity);
-                                command.Parameters.AddWithValue("@AchievementsDescription", Description);
-                                command.ExecuteNonQuery();
-                                MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    command.Parameters.AddWithValue("@SPW_Id", SPW_Id);
+                                    command.Parameters.AddWithValue("@RatingYear", RatingDate);
+                                    command.Parameters.AddWithValue("@WorkIndicator_Id", workIndicatorId);
+                                    command.Parameters.AddWithValue("@Quantity", Quantity);
+                                    command.Parameters.AddWithValue("@AchievementsDescription", Description);
+                                    command.ExecuteNonQuery();
+                                    MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                         }
                     }
+                    database.closeConnection();
                 }
-                database.closeConnection();
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Помилка SQL: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if(radio_WorkIndicator.Checked)
             {
-                database.openConnection();
-                var WorkName = textBox_workname.Text;
-                double Score;
-                if(double.TryParse(textBox_workscore.Text, out Score))
+                try
                 {
-                    var addQuery = "INSERT INTO WorkIndicator (WorkName, Score) VALUES (@WorkName, @Score)";
+                    database.openConnection();
+                    var WorkName = textBox_workname.Text;
+                    double Score;
+                    if (double.TryParse(textBox_workscore.Text, out Score))
+                    {
+                        var addQuery = "INSERT INTO WorkIndicator (WorkName, Score) VALUES (@WorkName, @Score)";
 
-                    var command = new SqlCommand(addQuery, database.getConnection());
-                    command.Parameters.AddWithValue("@WorkName", WorkName);
-                    command.Parameters.AddWithValue("@Score", Score);
+                        var command = new SqlCommand(addQuery, database.getConnection());
+                        command.Parameters.AddWithValue("@WorkName", WorkName);
+                        command.Parameters.AddWithValue("@Score", Score);
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Запис успішно створено.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    database.closeConnection();
                 }
-                else
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Виникла помилка, перевірте введені дані.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Помилка SQL: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                database.closeConnection();
             }
         }
     }

@@ -53,6 +53,12 @@
       <DependentUpon>add_form.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="delete_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delete_form.Designer.cs">
+      <DependentUpon>delete_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     <Compile Include="about_meForm.Designer.cs">
       <DependentUpon>about_meForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_for_delete\delete_university.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_university.Designer.cs">
+      <DependentUpon>delete_university.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="about_meForm.resx">
@@ -73,8 +85,14 @@
     <EmbeddedResource Include="add_form.resx">
       <DependentUpon>add_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="delete_form.resx">
+      <DependentUpon>delete_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_university.resx">
+      <DependentUpon>delete_university.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

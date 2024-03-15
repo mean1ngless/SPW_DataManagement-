@@ -143,6 +143,7 @@
             this.button_delete.Text = "Видалити";
             this.button_delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // pictureBox1
             // 

@@ -226,5 +226,11 @@ namespace course_work
             string table = tableSelect.Text;
             RefreshDataGrid(dataGridView_top, table);
         }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            Form delete_new = new delete_form();
+            delete_new.ShowDialog();
+        }
     }
 }
