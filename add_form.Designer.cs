@@ -452,6 +452,7 @@
             // button_add
             // 
             this.button_add.BackColor = System.Drawing.Color.LimeGreen;
+            this.button_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_add.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_add.ForeColor = System.Drawing.Color.White;
             this.button_add.Location = new System.Drawing.Point(413, 251);
@@ -465,6 +466,7 @@
             // button_closeform
             // 
             this.button_closeform.BackColor = System.Drawing.Color.Firebrick;
+            this.button_closeform.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_closeform.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_closeform.ForeColor = System.Drawing.Color.White;
             this.button_closeform.Location = new System.Drawing.Point(13, 251);
