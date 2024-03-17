@@ -34,9 +34,45 @@ namespace course_work
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int selected_id = Convert.ToInt32(textBox_selectedId.Text);
-            Form delete_some = new delete_university(selected_id);
-            delete_some.ShowDialog();
+            try
+            {
+                int selected_id = Convert.ToInt32(textBox_selectedId.Text);
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    Form delete_some = new delete_university(selected_id);
+                    delete_some.ShowDialog();
+                }
+                if(comboBox1.SelectedIndex == 1)
+                {
+                    Form delete_some = new delete_faculty(selected_id);
+                    delete_some.ShowDialog();
+                }
+                if(comboBox1.SelectedIndex == 2)
+                {
+                    Form delete_some = new delete_department(selected_id);
+                    delete_some.ShowDialog();
+                }
+                if(comboBox1.SelectedIndex == 3)
+                {
+                    Form delete_some = new delete_spw(selected_id);
+                    delete_some.ShowDialog();
+                }
+                if(comboBox1.SelectedIndex == 4)
+                {
+                    Form delete_some = new delete_rating(selected_id);
+                    delete_some.ShowDialog();
+                }
+                if(comboBox1.SelectedIndex == 5)
+                {
+                    Form delete_some = new delete_workindicator(selected_id);
+                    delete_some.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Перевірте введені дані", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

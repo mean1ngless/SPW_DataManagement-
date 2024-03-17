@@ -223,14 +223,27 @@ namespace course_work
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            string table = tableSelect.Text;
-            RefreshDataGrid(dataGridView_top, table);
+            if (tableSelect.SelectedIndex == 0 || tableSelect.SelectedIndex == 1 || tableSelect.SelectedIndex == 2 || tableSelect.SelectedIndex == 3 || tableSelect.SelectedIndex == 4 || tableSelect.SelectedIndex == 5)
+            {
+                string table = tableSelect.Text;
+                RefreshDataGrid(dataGridView_top, table);
+            }
+            else
+            {
+                MessageBox.Show("Оберіть довідник", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
             Form delete_new = new delete_form();
             delete_new.ShowDialog();
+        }
+
+        private void box_info_Click(object sender, EventArgs e)
+        {
+            Form about_me = new about_meForm();
+            about_me.ShowDialog();
         }
     }
 }

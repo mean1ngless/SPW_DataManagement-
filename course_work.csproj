@@ -71,11 +71,41 @@
     <Compile Include="about_meForm.Designer.cs">
       <DependentUpon>about_meForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms_for_delete\delete_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_department.Designer.cs">
+      <DependentUpon>delete_department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_faculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_faculty.Designer.cs">
+      <DependentUpon>delete_faculty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_rating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_rating.Designer.cs">
+      <DependentUpon>delete_rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_spw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_spw.Designer.cs">
+      <DependentUpon>delete_spw.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms_for_delete\delete_university.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms_for_delete\delete_university.Designer.cs">
       <DependentUpon>delete_university.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_workindicator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms_for_delete\delete_workindicator.Designer.cs">
+      <DependentUpon>delete_workindicator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,8 +121,23 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_department.resx">
+      <DependentUpon>delete_department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_faculty.resx">
+      <DependentUpon>delete_faculty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_rating.resx">
+      <DependentUpon>delete_rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_spw.resx">
+      <DependentUpon>delete_spw.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms_for_delete\delete_university.resx">
       <DependentUpon>delete_university.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms_for_delete\delete_workindicator.resx">
+      <DependentUpon>delete_workindicator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -473,7 +473,7 @@
             this.button_closeform.Name = "button_closeform";
             this.button_closeform.Size = new System.Drawing.Size(189, 54);
             this.button_closeform.TabIndex = 40;
-            this.button_closeform.Text = "Відминити";
+            this.button_closeform.Text = "←Назад";
             this.button_closeform.UseVisualStyleBackColor = false;
             this.button_closeform.Click += new System.EventHandler(this.button_closeform_Click);
             // 
