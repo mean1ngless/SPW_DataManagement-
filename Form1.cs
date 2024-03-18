@@ -105,19 +105,19 @@ namespace course_work
         }
         private void readSingleRow_University(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2));
         }
         private void readSingleRow_Faculty(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2));
         }
         private void readSingleRow_Department(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetInt32(2));
         }
         private void readSingleRow_SPW(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3));
         }
         private void readSingleRow_Rating(DataGridView dgw, IDataRecord record)
         {
@@ -128,11 +128,11 @@ namespace course_work
             double quantity = record.GetDouble(4);
             string achievementsDescription = record.IsDBNull(5) ? null : record.GetString(5);
 
-            dgw.Rows.Add(id, spwId, ratingYear, workIndicatorId, quantity, achievementsDescription, RowState.ModifiedNew);
+            dgw.Rows.Add(id, spwId, ratingYear, workIndicatorId, quantity, achievementsDescription);
         }
         private void readSingleRow_WorkIndicator(DataGridView dgw, IDataRecord record)
         {
-            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetDouble(2), RowState.ModifiedNew);
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetDouble(2));
         }
         private void RefreshDataGrid(DataGridView dgw, string tableSelected)
         {
@@ -218,7 +218,7 @@ namespace course_work
         private void button_addnew_Click(object sender, EventArgs e)
         {
             Form add_new = new add_form();
-            add_new.ShowDialog();
+            add_new.Show();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -237,13 +237,31 @@ namespace course_work
         private void button_delete_Click(object sender, EventArgs e)
         {
             Form delete_new = new delete_form();
-            delete_new.ShowDialog();
+            delete_new.Show();
         }
 
         private void box_info_Click(object sender, EventArgs e)
         {
             Form about_me = new about_meForm();
-            about_me.ShowDialog();
+            about_me.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form about_me = new about_meForm();
+            about_me.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Form about_me = new about_meForm();
+            about_me.Show();
+        }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            Form edit_form = new edit_form();
+            edit_form.Show();
         }
     }
 }
